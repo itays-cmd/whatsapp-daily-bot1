@@ -1,0 +1,21 @@
+name: WhatsApp Automation
+
+on:
+  schedule:
+    # 05:30 UTC זה 08:30 בבוקר שעון ישראל
+    - cron: '30 5 * * *'
+  workflow_dispatch: # כפתור להרצה ידנית לבדיקה
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run script
+        run: python main.py
