@@ -3,7 +3,7 @@ name: WhatsApp Automation
 on:
   schedule:
     # 05:30 UTC זה 08:30 בבוקר שעון ישראל
-    - cron: '30 5 * * *'
+    - cron: '10 14 * * *'
   workflow_dispatch: # כפתור להרצה ידנית לבדיקה
 
 jobs:
